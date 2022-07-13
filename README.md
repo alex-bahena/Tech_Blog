@@ -1,4 +1,4 @@
-# Employee_TrackerDB
+# Tech_Blog
  ### ![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)
   ## Table of Contents:
   - #### [Installation](#prerequisites)
