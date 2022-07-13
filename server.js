@@ -1,19 +1,45 @@
-const express = require('express');
-const routes = require('./routes');
-const morgan = require("morgan");
-// import sequelize connection
-const sequelize = require('./config/connection')
+const express = require("express");
+const session = require("express-session");
+const exphbs = require("express-handlebars");
+const helpers = require('./utils./helpers');
+const routes = require('./controllers');
+const sequelize = require("./config/connection.js");
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
-app.use(morgan("dev"));
+
+//handlebars
+const hbs = exphbs.create({helpers});
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
+
+//Session Create
+const sess = {
+  secret: "Super secret secret",
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.static(path.join(__dirname, "public")));
 app.use(routes);
 
+const init = async () => {
+  try {
+      await sequelize.sync();
+      app.listen(PORT, () => {
+          console.log(`Now listening PORT: ${PORT}`)
+      });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+} 
 
-// sync sequelize models to the database, then turn on the server
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log(`Now listening in port ${PORT}`));
-});
+init();
