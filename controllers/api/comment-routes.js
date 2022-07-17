@@ -2,15 +2,15 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const authenticated = require('../../utils/authentication');
 
-//All Comments
-router.get('/', (req, res) => {
-    Comment.findAll({})
-        .then(dbCommentData => res.json(dbCommentData))
-        .catch(err => {
-            console.log(err); 
-            res.status(500).json(err); 
-        })
-});
+// //All Comments
+// router.get('/', (req, res) => {
+//     Comment.findAll({})
+//         .then(dbCommentData => res.json(dbCommentData))
+//         .catch(err => {
+//             console.log(err); 
+//             res.status(500).json(err); 
+//         })
+// });
 
 // Creating a comment. 
 router.post("/", authenticated, async (req, res) => {

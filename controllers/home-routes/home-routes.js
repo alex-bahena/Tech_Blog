@@ -11,14 +11,12 @@ router.get('/', async (req, res) => {
                     'content',
                     'createdAt'
                 ],
-                include: {
-                    model: User,
-                    attributes: ['username']
-                }
+                include: [{ model: User }]
             }
         )
         const posts = homepageData.map(post => post.get({ plain: true }));
-        res.render('homepage', {
+        // console.log(posts);
+        res.render('all-posts', {
             posts,
             logged_in: req.session.logged_in
         })
@@ -35,47 +33,44 @@ router.get('/login', (req, res) => {
     }
     res.render('login');
 });
+
 //singup rendering
-router.get('/', (req, res) => {
+router.get('/signup', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
     res.render('signup');
 });
 
 // Render post by id
-router.get('/post/:id', (req, res) => {
+router.get('/comment/:id', async (req, res) => {
+    const id = req.params.id;
+    console.log(id);
     try {
         const { id } = req.params;
         const { logged_in } = req.session;
-        const postData = Post.findOne({
-            where: {
-                id: id
-            },
-            attributes: [
-                'id',
-                'post_text',
-                'title',
-                'created_at'
-            ],
+        const post = await Post.findByPk(id, {
             include: [
+                User,
                 {
                     model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-                    include: {
-                        model: User,
-                        attributes: ['username']
-                    }
-                },
-                {
-                    model: User,
-                    attributes: ['username']
+                    include: [User],
                 }
             ]
         });
 
-        const posts = postData.map(post => post.get({ plain: true }));
-        // pass data to template
-        res.render('single-post', { posts, logged_in: logged_in });
+        const renderPost = post.get({ plain: true });
+        console.log(renderPost);
+        res.render('single-post', {
+            renderPost,
+            logged_in
+        });
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });
+
+
+
+module.exports = router;
