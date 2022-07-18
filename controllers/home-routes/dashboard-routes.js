@@ -22,7 +22,6 @@ router.get('/', authenticated, async (req, res) => {
             logged_in
         });
     } catch (err) {
-        console.log(err);
         res.status(500).json(err);
     }
 });

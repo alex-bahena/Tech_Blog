@@ -17,7 +17,6 @@ router.post("/", async (req, res) => {
             res.status(200).json({ message: `Welcome ${username} you account was created.` });
         });
     } catch (err) {
-        console.log('aquiUserCatchError');
         res.status(500).json(err);
     }
 });
@@ -36,14 +35,14 @@ router.post("/login", async (req, res) => {
 
         if (!loginUser) {
             res.status(400).json({ message: "Please try again, incorrect username or password" });
-        return;
+            return;
         }
 
         const validPassword = loginUser.validatePassword(password);
         console.log(validPassword);
         if (!validPassword) {
             res.status(400).json({ message: "Please try again, incorrect username or password" });
-        return;
+            return;
         }
 
         req.session.save(() => {
@@ -54,15 +53,19 @@ router.post("/login", async (req, res) => {
         });
 
     } catch (err) {
-        console.log('badrequest')
-        res.status(500).json({success: false, message: err.message});
+
+        res.status(500).json({ success: false, message: err.message });
     }
 })
 
 router.post("/logout", authenticated, async (req, res) => {
-    req.session.logged_in
-        ? req.session.destroy(() => { res.status(204).end() })
-        : res.status(404).end;
+    try {
+        req.session.logged_in
+            ? req.session.destroy(() => { res.status(204).end() })
+            : res.status(404).end;
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
 });
 
 module.exports = router;

@@ -29,7 +29,7 @@
   h6 {
     font-weight: 700;
     margin: 0;
-    color: var(--dark);
+    color: var( --secondary);
     line-height: 1.25;
   }
   

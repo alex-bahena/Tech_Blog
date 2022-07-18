@@ -59,9 +59,7 @@ router.get('/comment/:id', async (req, res) => {
                 }
             ]
         });
-
         const renderPost = post.get({ plain: true });
-        console.log(renderPost);
         res.render('single-post', {
             renderPost,
             logged_in

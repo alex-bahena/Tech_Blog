@@ -44,7 +44,6 @@ router.post('/:id', async (req, res) => {
 
 // Deleting post
 router.delete('/:id', authenticated, (req, res) => {
-    console.log('HerePostRoutes!')
     try {
         const { id } = req.params;
         const { title } = req.body;
