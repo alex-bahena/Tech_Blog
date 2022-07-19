@@ -6,7 +6,7 @@
         Posted by {{renderPost.user.username}} on {{format_date renderPost.createdAt}}
       </div>
     </div>
-    <div class="card-body">
+    <div class="card-content">
       {{renderPost.content}}
     </div>
   </article>
@@ -16,14 +16,14 @@
     <div class="card-header">
       <h3>Comments</h3>
     </div>
-    <div class="card-body">
+    <div class="card-content">
       {{#each renderPost.comments}}
       <div>
-        <p>
-          {{content}}
+           <p>
+          &#x26AF; {{user.username}}, {{format_date createdAt}}
         </p>
         <p>
-          &mdash; {{user.username}}, {{format_date createdAt}}
+         &#x26AC; {{content}}
         </p>
       </div>
       {{/each}}
@@ -33,7 +33,7 @@
 
   <form method="POST" action="/api/comment/add" id="new-comment-form" class="card">
     <div class="card-header">
-      <h3>Add New Comment</h3>
+      <h3> &#x27BE; Add New Comment</h3>
     </div>
 
     <div class="card-body">
