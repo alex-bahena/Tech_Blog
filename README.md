@@ -22,37 +22,37 @@ DB_USER='@your user name'
 
 DB_PW='@your password' 
 
-DB_NAME='ecommerce_db' - The name for the DataBase for this project
+DB_NAME='techblog_db' - The name for the DataBase for this project
 ```
   
-After this you will need to create the Schema in your MYSQL shell, once you've done this step install your node modules with the following command `npm i` using your CLI and then run the command `npm run seed`  to seed your DataBase, after this you are ready to start your server with the command `npm start` your program will be listening from `Port: 3001` .
+After this you will need to create the Schema named techblog_db in your MYSQL shell, once you've done this step install your node modules with the following command `npm i` using your CLI after this you are ready to start your server with the command `npm start` your program will be listening from `Port: 3001` .
 
-Once you've done the last step, you can start using your REST client. For more please watch the following video by clicking on the Google Drive link down below.
+Once you've done the last step, you can just open your web browser and run the app at localhost:3001 For more click on the Heroku link down below, to test out the deployed app.
 
-[![Google Drive](https://img.shields.io/static/v1?style=for-the-badge&message=Google+Drive&color=4285F4&logo=Google+Drive&logoColor=FFFFFF&label=)](https://drive.google.com/file/d/1fJinlReaaxWZoFXXuIdZSg8X7TNF9MUv/view?usp=sharing)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://alejandros-tech-blog.herokuapp.com/)
 
   
 ## Usage:
-Internet retail, also known as e-commerce, is the largest sector of the electronics industry, generating an estimated $29 trillion in 2019. E-commerce platforms like Shopify and WooCommerce provide a suite of services to businesses of all sizes. Due to their prevalence, understanding the fundamental architecture of these platforms will benefit you as a full-stack web developer.
+This is a CMS-style blog site app similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
 
 
 ## Code Snippets
 
 <p float="center">
-  <img align="center" src="https://github.com/AlejandroBahSan/E-Commerce-BackEnd/blob/master/Assets/Category-Snippet.jpg" width="400" height="550" />
-  <img align="right"  src="https://github.com/AlejandroBahSan/E-Commerce-BackEnd/blob/master/Assets/Product-Snippet.jpg" width="400" height="550" />
+  <img align="center" src="https://github.com/AlejandroBahSan/Tech_Blog/blob/master/Assets/comment-snapshot.png" width="400" height="550" />
+  <img align="right"  src="https://github.com/AlejandroBahSan/Tech_Blog/blob/master/Assets/index-snapshot.png" width="400" height="550" />
  </p>
  
  <p float="center">
-  <img align="center" src="https://github.com/AlejandroBahSan/E-Commerce-BackEnd/blob/master/Assets/ProductTag-Snippet.jpg" width="400" height="550" />
-  <img align="right"  src="https://github.com/AlejandroBahSan/E-Commerce-BackEnd/blob/master/Assets/Tag-Snippet.jpg" width="400" height="550" />
+  <img align="center" src="https://github.com/AlejandroBahSan/Tech_Blog/blob/master/Assets/post-snapshot.png" width="400" height="550" />
+  <img align="right"  src="https://github.com/AlejandroBahSan/Tech_Blog/blob/master/Assets/user-snapshot.png" width="400" height="550" />
  </p>
 
 <p>
  
 ## Quick Demo
- #### [![Google Drive](https://img.shields.io/static/v1?style=for-the-badge&message=Google+Drive&color=4285F4&logo=Google+Drive&logoColor=FFFFFF&label=)](https://drive.google.com/file/d/1fJinlReaaxWZoFXXuIdZSg8X7TNF9MUv/view?usp=sharing) 
- ![Demo](https://github.com/AlejandroBahSan/E-Commerce-BackEnd/blob/master/Assets/Demo.gif)
+ #### [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://alejandros-tech-blog.herokuapp.com/)
+ ![Demo](https://github.com/AlejandroBahSan/Tech_Blog/blob/master/Assets/techblogdemo.gif)
 </p>
  
  
@@ -81,18 +81,22 @@ Internet retail, also known as e-commerce, is the largest sector of the electron
   ## Collaborators:
   #### Alejandro Bahena.
   ## Tools:
-  ### ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+  ### ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Handlebars.js](https://img.shields.io/static/v1?style=for-the-badge&message=Handlebars.js&color=000000&logo=Handlebars.js&logoColor=FFFFFF&label=)
  ## Built with:
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 * [NodeJS](https://nodejs.org/)
+
  
  * Dependencies:
   ```
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "morgan": "^1.10.0",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.7"
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "sequelize": "^6.21.0",
+    "connect-session-sequelize": "^7.1.4",
+    "bcrypt": "^5.0.1",
+    "mysql2": "^2.3.3"
   ```
  
   ## Questions:
