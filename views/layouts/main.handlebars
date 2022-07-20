@@ -16,11 +16,11 @@
       <li class="navtext li-inline nav-item" id="{{authenticated}}"><a href="/dashboard">Dashboard</a></li>
 
       {{#if logged_in}}
-
+      <li class="navtext li-inline nav-item"><a href="/" id="logout-link">Logout</a></li>
       {{else}}
       <li class="navtext li-inline nav-item"><a href="/login">Login </a></li>
       {{/if}}
-      <li class="navtext li-inline nav-item"><a href="/" id="logout-link">Logout</a></li>
+      
       {{#if logged_in}}
 
       {{else}}
