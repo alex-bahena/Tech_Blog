@@ -41,7 +41,7 @@ const init = async () => {
       
     });
   } catch (err) {
-    res.status(500).json(err);
+    console.log('No possible to stablish connection:', err.message);
   }
 }
 
