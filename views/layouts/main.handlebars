@@ -12,19 +12,19 @@
 <body class="flex-column min-100-vh">
   <nav class="navbar">
     <ul>
-      <li class="li-inline nav-item"><a href="/">Home</a></li>
-      <li class="li-inline nav-item" id="{{authenticated}}"><a href="/dashboard">Dashboard</a></li>
+      <li class="navtext li-inline nav-item"><a href="/">Homepage</a></li>
+      <li class="navtext li-inline nav-item" id="{{authenticated}}"><a href="/dashboard">Dashboard</a></li>
 
       {{#if logged_in}}
 
       {{else}}
-      <li class="li-inline nav-item"><a href="/login">Login </a></li>
+      <li class="navtext li-inline nav-item"><a href="/login">Login </a></li>
       {{/if}}
-      <li class="li-inline nav-item"><a href="/" id="logout-link">Logout</a></li>
+      <li class="navtext li-inline nav-item"><a href="/" id="logout-link">Logout</a></li>
       {{#if logged_in}}
 
       {{else}}
-      <li class="li-inline nav-item"><a href="/signup">Signup </a></li>
+      <li class="navtext li-inline nav-item"><a href="/signup">Signup </a></li>
       {{/if}}
     </ul>
   </nav>

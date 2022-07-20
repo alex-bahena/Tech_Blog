@@ -4,7 +4,7 @@ require('dotenv').config();
 
  const sequelize = process.env.CLEARDB_DATABASE_URL
     ? new Sequelize(process.env.CLEARDB_DATABASE_URL)
-    : new Sequelize(process.env.DB_NAME, process.env.DB_USERNAME, process.env.DB_PW, {
+    : new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PW, {
       host: 'localhost',
       dialect: 'mysql',
       port: 3306

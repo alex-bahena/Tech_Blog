@@ -1,10 +1,10 @@
 :root {
-    --primary: #ccdad1;
+    --primary: #D9EAD3;
     --secondary: #9caea9;
     --tertiary: #788585;
     --light-dark: #6f6866;
-    --dark: #38302e;
-    --border-radius: 0.3rem;
+    --dark: #231010;
+    --border-radius: 0.5rem;
   }
   
   * {
@@ -44,7 +44,7 @@
   header {
     margin-top: 50px;
   }
-  
+ 
   main {
     margin: 20px auto;
     width: 94%;
@@ -53,6 +53,12 @@
   a {
     text-decoration: none;
   }
+
+  .navtext{
+    font-size: 23px;
+  }
+
+
   
   p {
     font-size: 1.2rem;
@@ -66,9 +72,7 @@
       padding: 10px;
   }
   
-  .card-header h2 {
-    color: var(--primary);
-  }
+ 
   
   .btn {
     font-size: 1.3rem;
@@ -84,6 +88,13 @@
     background-color: var(--light-dark);
     box-shadow: 3px 3px var(--dark);
     transform: translate(-1px, -1px);
+  }
+  #update-btn{
+    margin-bottom: .5em;
+  }
+
+  #submit-btn{
+    margin-top: 1em;
   }
   
   .btn:hover {
@@ -158,12 +169,16 @@
   
   .footer a {
     display: inline-block;
-    padding: 1em;
+    padding: .2em 20px .2em 20px;
     margin-bottom: .5em;
     background-color: var(--dark);
     color: var(--primary);
     border-radius: var(--border-radius);
     text-decoration: none;
+  }
+
+  .newpost{
+    font-size: 20px;
   }
   
   /* CARDS */
@@ -177,14 +192,26 @@
     color: var(--primary);
     background-color: var(--dark);
     padding: 1%;
-    border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  
+  }
+
+  #new-comment-form{
+    padding-bottom:1em;
+  }
+
+  #edit-post-form{
+    padding-bottom:2em;
+  }
+
+  #post-body{
+    margin-bottom: 2em;
   }
   
   .card-content {
     padding: 1%;
   }
   
-  /* FORM */
+  /* FORMS  */
   .form-label,
   .form-input,
   .form-textarea {
@@ -267,6 +294,8 @@
     flex-grow: 1;
   }
   
+/* MEDIA QUERIES  */
+
   .col-1 {
     flex: 0 0 calc(100% * 1 / 12 - 2%);
   }
