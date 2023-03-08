@@ -15,25 +15,26 @@
  * [MySQL](https://dev.mysql.com/downloads/mysql/)
   
   ### Installation:
-  ### You must install the following for this app to function:
-  #### To use this application, you will need to first clone this repository then once you have in your local storage and you've open it in your source-code editor you will need to proceed to create your `.env` file with the following data 
+  ### Main steps to run this app:
+  #### First clone this repository, then once you have in your local storage and open it in your source-code editor.
+  #### Then create your `.env` file with the following data 
 ```
 DB_USER='@your user name' 
 
 DB_PW='@your password' 
 
-DB_NAME='techblog_db' - The name for the DataBase for this project
+DB_NAME='techblog_db' -  The name of the database for this project
 ```
   
-After this you will need to create the Schema named techblog_db in your MYSQL shell, once you've done this step install your node modules with the following command `npm i` using your CLI after this you are ready to start your server with the command `npm start` your program will be listening from `Port: 3001` .
+After this you'll need to create the Schema named techblog_db in your MYSQL shell, once you've done this step, install your node modules with the following command  using your CLI - `npm i`, after this step you'll be ready to run your server using the command `npm start` the app will be running on your `Port: 3001` .
 
-Once you've done the last step, you can just open your web browser and run the app at localhost:3001 For more click on the Heroku link down below, to test out the deployed app.
+Once you've done this last step, you can open your web browser and run the app at localhost:3001 | For more click on the Heroku link down below, to test out the deployed app.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://alejandros-tech-blog.herokuapp.com/)
 
   
 ## Usage:
-This is a CMS-style blog site app similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well.
+This is a CMS-style blog site app similar to a Wordpress site, where developers can publish their blog posts and comment other dev´s posts.
 
 
 ## Code Snippets
